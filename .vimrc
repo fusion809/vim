@@ -7,7 +7,8 @@ Plugin 'parkr/vim-jekyll'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Firef0x/PKGBUILD.vim'
 Plugin 'spec.vim'
-Plugin 'lpenz/vimcommander'
+Plugin 'vimExplorer--Viau'
+Plugin 'tpope/vim-fugitive'
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
