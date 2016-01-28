@@ -21,3 +21,8 @@ endfunction
 function PKG()
 	NERDTree /home/fusion809/GitHub/PKGBUILDs
 endfunction
+
+function SH()
+        NERDTree /home/fusion809/Shell
+endfunction
+
