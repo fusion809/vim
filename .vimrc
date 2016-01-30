@@ -21,6 +21,7 @@ Plugin 'Firef0x/PKGBUILD.vim'
 Plugin 'spec.vim'
 Plugin 'vimExplorer--Viau'
 Plugin 'tpope/vim-fugitive'
+Plugin 'geetarista/ego.vim'
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
