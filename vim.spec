@@ -197,7 +197,7 @@ vim-common package.
 %prep
 %setup -q -b 0 -n vim-%{baseversion}.%{patchlevel}
 # fix rogue dependencies from sample code
-chmod -x runtime/tools/mve.awk
+#chmod -x runtime/tools/mve.awk
 %patch2002 -p1
 %patch2003 -p1
 %if %{withhunspell}
