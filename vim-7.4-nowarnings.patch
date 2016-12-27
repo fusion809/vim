@@ -1,0 +1,11 @@
+diff -up vim74/src/ex_docmd.c.e319 vim74/src/ex_docmd.c
+--- vim74/src/ex_docmd.c.e319	2016-02-17 14:48:23.033995923 +0100
++++ vim74/src/ex_docmd.c	2016-02-17 14:48:03.712890575 +0100
+@@ -4630,6 +4630,7 @@ get_flags(exarg_T *eap)
+     void
+ ex_ni(exarg_T *eap)
+ {
++    return;
+     if (!eap->skip)
+ 	eap->errmsg = (char_u *)N_("E319: Sorry, the command is not available in this version");
+ }
