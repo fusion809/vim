@@ -24,7 +24,6 @@ Version: %{baseversion}.%{patchlevel}
 Release: 1%{?dist}
 License: Vim
 Group:   Applications/Editors
-Source0: https://github.com/vim/vim/archive/v%{baseversion}.%{patchlevel}.tar.gz
 Source1: vim.sh
 Source2: vim.csh
 Source4: virc
@@ -195,9 +194,11 @@ with graphics and mouse capabilities.  You'll also need to install the
 vim-common package.
 
 %prep
+curl -sOL https://github.com/vim/vim/archive/v%{baseversion}.%{patchlevel}.tar.gz
+tar -xzf v%{baseversion}.%{patchlevel}.tar.gz
 %setup -q -b 0 -n vim-%{baseversion}.%{patchlevel}
 # fix rogue dependencies from sample code
-#chmod -x runtime/tools/mve.awk
+chmod -x runtime/tools/mve.awk
 %patch2002 -p1
 %patch2003 -p1
 %if %{withhunspell}
