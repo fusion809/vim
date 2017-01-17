@@ -35,11 +35,11 @@ colorscheme ego
 
 let GHUB="/home/fusion809/GitHub"
 function FGI()
-	NERDTree /home/fusion809/GitHub/fusion809.github.io
+	NERDTree /home/fusion809/GitHub/mine/websites/fusion809.github.io
 endfunction
 
 function PKG()
-	NERDTree /home/fusion809/GitHub/PKGBUILDs
+	NERDTree /home/fusion809/GitHub/mine/packaging/PKGBUILDs
 endfunction
 
 function SH()
