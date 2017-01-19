@@ -9,15 +9,15 @@ call vundle#begin()
 "
 " " let Vundle manage Vundle, required
 " Plugin 'VundleVim/Vundle.vim'
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+"source ~/.vim_runtime/vimrcs/basic.vim
+"source ~/.vim_runtime/vimrcs/filetypes.vim
+"source ~/.vim_runtime/vimrcs/plugins_config.vim
+"source ~/.vim_runtime/vimrcs/extended.vim
 
-try
-source ~/.vim_runtime/my_configs.vim
-catch
-endtry
+"try
+"source ~/.vim_runtime/my_configs.vim
+"catch
+"endtry
 
 call vundle#rc()
 
@@ -28,6 +28,11 @@ Plugin 'spec.vim'
 Plugin 'vimExplorer--Viau'
 Plugin 'tpope/vim-fugitive'
 Plugin 'geetarista/ego.vim'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'tkztmk/vim-vala'
+Plugin 'klen/python-mode'
+Plugin 'kchmck/vim-coffee-script'
+let vim_markdown_preview_github=1
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
@@ -47,3 +52,5 @@ function SH()
 endfunction
 
 au BufNewFile,BufRead *.m setlocal ft=matlab
+au BufNewFile,BufRead virc setlocal ft=vim
+"au BufNewFile,BufRead *.cson setlocal ft=json
