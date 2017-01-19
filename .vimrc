@@ -1,5 +1,5 @@
 set nocompatible               " be iMproved
-filetype off                   " required!
+filetype plugin on             " required!
 
 set runtimepath+=~/.vim_runtime
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,6 +28,9 @@ Plugin 'spec.vim'
 Plugin 'vimExplorer--Viau'
 Plugin 'tpope/vim-fugitive'
 Plugin 'geetarista/ego.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'reedes/vim-lexical'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tkztmk/vim-vala'
 Plugin 'klen/python-mode'
@@ -38,19 +41,13 @@ call pathogen#helptags()
 syntax on
 colorscheme ego
 
-let GHUB="/home/fusion809/GitHub"
-function FGI()
-	NERDTree /home/fusion809/GitHub/mine/websites/fusion809.github.io
-endfunction
-
-function PKG()
-	NERDTree /home/fusion809/GitHub/mine/packaging/PKGBUILDs
-endfunction
-
-function SH()
-        NERDTree /home/fusion809/Shell
-endfunction
-
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
-"au BufNewFile,BufRead *.cson setlocal ft=json
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
+let g:lexical#spell = 1
+let g:lexical#spelllang = ['en_au', 'en_gb',]
