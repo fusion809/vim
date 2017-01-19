@@ -28,6 +28,7 @@ Plugin 'spec.vim'
 Plugin 'vimExplorer--Viau'
 Plugin 'tpope/vim-fugitive'
 Plugin 'geetarista/ego.vim'
+Plugin 'tomasr/molokai'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'reedes/vim-lexical'
@@ -39,7 +40,7 @@ let vim_markdown_preview_github=1
 execute pathogen#infect()
 call pathogen#helptags()
 syntax on
-colorscheme ego
+colorscheme molokai
 
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
@@ -51,3 +52,8 @@ augroup lexical
 augroup END
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_au', 'en_gb',]
+map <C-a> <esc>ggVG<CR>
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
