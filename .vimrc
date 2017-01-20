@@ -11,7 +11,7 @@ call vundle#begin()
 call vundle#rc()
 
 "" Plugins
-""" NerdTree
+""" NERDTree
 Plugin 'scrooloose/nerdtree'
 """ PKGBUILD
 Plugin 'Firef0x/PKGBUILD.vim'
@@ -37,6 +37,8 @@ Plugin 'tkztmk/vim-vala'
 Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
+""" VimL
+Plugin 'syngan/vim-vimlint'
 
 " Pathogen
 execute pathogen#infect()
@@ -45,6 +47,9 @@ call pathogen#helptags()
 " Molokai theme
 syntax on
 colorscheme molokai
+
+" NERDTree
+let NERDTreeShowHidden=1
 
 " file associations
 au BufNewFile,BufRead *.m setlocal ft=matlab
