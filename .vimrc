@@ -44,6 +44,8 @@ colorscheme molokai
 
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
+
+" Spell-checking
 augroup lexical
   autocmd!
   autocmd FileType markdown,mkd call lexical#init()
@@ -52,8 +54,15 @@ augroup lexical
 augroup END
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_au', 'en_gb',]
+
+" Keyboard shortcuts
+" Traditional keybindings
 map <C-a> <esc>ggVG<CR>
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+" More normal splits
+set splitbelow
+set splitright
