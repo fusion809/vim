@@ -24,7 +24,7 @@ Plugin 'tpope/vim-fugitive'
 """ Molokai theme
 Plugin 'tomasr/molokai'
 """ tabular for Markdown
-Plugin 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
@@ -38,7 +38,7 @@ Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
 """ VimL
-Plugin 'syngan/vim-vimlint'
+"Plugin 'syngan/vim-vimlint'
 
 " Pathogen
 execute pathogen#infect()
