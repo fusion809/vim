@@ -13,18 +13,12 @@ call vundle#rc()
 "" Plugins
 """ NERDTree
 Plugin 'scrooloose/nerdtree'
-""" PKGBUILD
-Plugin 'Firef0x/PKGBUILD.vim'
-""" specfile
-Plugin 'spec.vim'
 """ Gnuplot
 Plugin 'mdlerch/vim-gnuplot'
 """ git manager
 Plugin 'tpope/vim-fugitive'
 """ Molokai theme
 Plugin 'tomasr/molokai'
-""" tabular for Markdown
-"Plugin 'godlygeek/tabular'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
@@ -37,8 +31,6 @@ Plugin 'tkztmk/vim-vala'
 Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
-""" VimL
-"Plugin 'syngan/vim-vimlint'
 
 " Pathogen
 execute pathogen#infect()
