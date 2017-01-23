@@ -12,7 +12,8 @@ call vundle#rc()
 
 "" Plugins
 """ NERDTree
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
+" Adds too much time to startup
 """ Gnuplot
 Plugin 'mdlerch/vim-gnuplot'
 """ git manager
