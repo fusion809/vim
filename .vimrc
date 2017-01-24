@@ -12,9 +12,10 @@ call vundle#rc()
 
 "" Plugins
 """ NERDTree
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Adds too much time to startup
-""" Gnuplot
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"" Gnuplot
 Plugin 'mdlerch/vim-gnuplot'
 """ git manager
 Plugin 'tpope/vim-fugitive'
@@ -29,7 +30,7 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 """ Vala syntax-highlighting plugin, seemingly unmaintained since 7 Sep 2012
 Plugin 'tkztmk/vim-vala'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
 
@@ -43,6 +44,8 @@ colorscheme molokai
 
 " NERDTree
 let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " file associations
 au BufNewFile,BufRead *.m setlocal ft=matlab
@@ -66,8 +69,7 @@ let vim_markdown_preview_github=1
 map <C-a> <esc>ggVG<CR>
 vmap <C-c> "+yi
 vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
+vmap <C-v> "+gP
 
 " More normal splits
 set splitbelow
