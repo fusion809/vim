@@ -41,6 +41,8 @@ Plugin 'JuliaEditorSupport/julia-vim'
 "Plugin 'stanangeloff/php.vim'
 " Better C/C++ support
 Plugin 'c.vim'
+" Clang
+Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
 
