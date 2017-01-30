@@ -66,10 +66,38 @@ let vim_markdown_preview_github=1
 
 " Keyboard shortcuts
 " More traditional keybindings
-map <C-a> <esc>ggVG<CR>
-vmap <C-c> "+yi
-vmap <C-x> "+c
-vmap <C-v> "+gP
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" C-Q for quit
+silent !stty -ixon > /dev/null 2>/dev/null
+map <C-Q> :qa!<CR>
+
+" CTRL-V and SHIFT-Insert are Paste
+map <C-V> "+gP
+map <S-Insert> "+gP
+
+cmap <C-V> <C-R>+
+cmap <S-Insert> <C-R>+
+
+" Pasting blockwise and linewise selections is not possible in Insert and
+" Visual mode without the +virtualedit feature.  They are pasted as if they
+" were characterwise instead.
+" Uses the paste.vim autoload script.
+
+exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+
+imap <S-Insert> <C-V>
+vmap <S-Insert> <C-V>
+
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
 
 " More normal splits
 set splitbelow
