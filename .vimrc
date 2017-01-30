@@ -66,24 +66,26 @@ let vim_markdown_preview_github=1
 
 " Keyboard shortcuts
 " More traditional keybindings
-" CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
 
-" CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
-
-" C-Q for quit
+" CTRL-X for Cut
 silent !stty -ixon > /dev/null 2>/dev/null
+
+" CTRL-A for Select All
+map <C-A> ggVG<CR>
+
+" CTRL-C is Copy only works in gVim
+map <C-C> "+y<CR>
+
+" C-Q for Quit
 map <C-Q> :qa!<CR>
 
-" CTRL-V and SHIFT-Insert are Paste
+" CTRL-V is Paste only works in gVim
 map <C-V> "+gP
-map <S-Insert> "+gP
-
 cmap <C-V> <C-R>+
-cmap <S-Insert> <C-R>+
+
+" CTRL-X for Cut only works in gVim
+map <C-x> "+x
+cmap <C-x> <C-R>+
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
@@ -102,3 +104,4 @@ imap <c-s> <Esc>:w<CR>a
 " More normal splits
 set splitbelow
 set splitright
+
