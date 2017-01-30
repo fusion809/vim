@@ -33,6 +33,16 @@ Plugin 'tkztmk/vim-vala'
 "Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
+" Julia support
+Plugin 'JuliaEditorSupport/julia-vim'
+" Rust support
+"Plugin 'rust-lang/rust.vim'
+" PHP support
+"Plugin 'stanangeloff/php.vim'
+" Better C/C++ support
+Plugin 'c.vim'
+" Go support
+"Plugin 'fatih/vim-go'
 
 " Pathogen
 execute pathogen#infect()
