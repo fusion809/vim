@@ -53,6 +53,11 @@ else
 	cd ..
 fi
 
+if ! [[ -d $HOME/.vim/bundle/Vundle.vim ]]; then
+	mkdir -p $HOME/.vim/bundle
+	git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
+
 if ! [[ -d $HOME/.vim/syntax ]]; then
 	mkdir -p $HOME/.vim/syntax
 fi
