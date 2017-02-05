@@ -73,6 +73,7 @@ let g:lexical#spelllang = ['en_au', 'en_gb',]
 
 " Markdown mode
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
 
 " Markdown Preview
 let vim_markdown_preview_github=1
