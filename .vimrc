@@ -46,9 +46,7 @@ Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
 
-" Pathogen
 execute pathogen#infect()
-call pathogen#helptags()
 
 " Molokai theme
 syntax on
@@ -72,6 +70,9 @@ augroup lexical
 augroup END
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_au', 'en_gb',]
+
+" Markdown mode
+let g:vim_markdown_folding_disabled = 1
 
 " Markdown Preview
 let vim_markdown_preview_github=1
