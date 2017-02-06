@@ -69,3 +69,4 @@ fi
 
 cp vim/.vimrc $HOME
 cp vim/sh.vim $HOME/.vim/syntax
+cp vim/*.add $HOME/.vim/spell
