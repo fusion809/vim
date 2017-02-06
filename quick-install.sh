@@ -39,6 +39,14 @@ elif [[ "${DISTRO_NAME}" == "SLE" ]] || [[ "${DISTRO_NAME}" == "SUSE Linux Enter
 	sudo zypper addrepo $OBS_URL/SLE_${DISTRO_VERSION/ /_}/home:fusion809.repo
         sudo zypper refresh
         sudo zypper install -y vim gvim-gtk2 gvim-gtk3 git
+elif [[ "${DISTRO_NAME}" == "Manjaro Linux" ]] || [[ "${DISTRO_NAME}" == "Arch Linux" ]]; then
+	sudo -s -- << EOF
+echo -e "[home_fusion809_Arch_Extra]
+SigLevel = Never
+Server = http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$(uname -m)" >> /etc/pacman.conf
+pacman -Syu --noconfirm
+pacman -S gvim-gtk2 --noconfirm
+EOF
 else
 	printf "Either you are using an unsupported platform or there is a bug in this installer script. Supported platforms are presently supported versions of CentOS, Fedora, Mageia, openSUSE, RHEL and Scientific Linux, except RHEL 5. Also SLE 12/12 P1/12 P2\n"
 fi
