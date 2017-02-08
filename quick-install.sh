@@ -75,6 +75,8 @@ if ! [[ -d $HOME/.vim/syntax ]]; then
 	mkdir -p $HOME/.vim/syntax
 fi
 
+vim +PluginInstall +qall
+
 cp vim/.vimrc $HOME
 cp vim/sh.vim $HOME/.vim/syntax
 cp vim/*.add $HOME/.vim/spell
