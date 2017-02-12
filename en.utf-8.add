@@ -132,3 +132,8 @@ ethernet
 noarch
 libsolv
 bsdtar
+AppImage
+EPEL
+wget
+cURL
+while
