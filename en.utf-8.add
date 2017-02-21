@@ -159,3 +159,11 @@ Frugalware
 KaOS
 rpmbuild
 SlackBuild
+Lubuntu
+i686
+i486
+i386
+i586
+DBus
+debuild
+Pentesting
