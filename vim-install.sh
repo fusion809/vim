@@ -5,6 +5,7 @@ fi
 
 if ! [[ -d /usr/local/share/applications ]]; then
 	sudo mkdir -p /usr/local/share/applications
+	sudo mkdir -p /usr/local/share/man/man1
 	sudo mkdir -p /usr/local/share/pixmaps
 	sudo mkdir -p /usr/local/bin
 fi
@@ -12,6 +13,9 @@ fi
 VIM_VERSION=$(wget -cq https://github.com/vim/vim/releases -O - | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
 VIMDIR=$HOME/Programs/vim-${VIM_VERSION}
 INSTDIR=$VIMDIR/INST
+if [[ -d $INSTDIR ]]; then
+	rm -rf $INSTDIR
+fi
 datadir=/usr/share
 bindir=/usr/bin
 prefix=$INSTDIR/usr
@@ -81,3 +85,19 @@ sudo ln -sf $VIMDIR/runtime/vim48x48.png /usr/local/share/pixmaps/vim.png
 sudo ln -sf $VIMDIR/runtime/vim48x48.png /usr/local/share/pixmaps/gvim.png
 sudo ln -sf $VIMDIR/runtime/vim.desktop /usr/local/share/applications/vim.desktop
 sudo ln -sf $VIMDIR/runtime/gvim.desktop /usr/local/share/applications/gvim.desktop
+
+for k in $INSTDIR/usr/share/man/man1/*.1
+do
+	if ! [[ -L $k ]]; then
+		gzip $k
+	fi
+	
+	if [[ -L $k ]]; then
+		rm $k
+		if `echo $k | grep diff > /dev/null 2>&1`; then
+			sudo ln -sf $INSTDIR/usr/share/man/man1/vimdiff.1.gz /usr/local/share/man/man1/${k##*/}.gz
+		else
+			sudo ln -sf $INSTDIR/usr/share/man/man1/vim.1.gz /usr/local/share/man/man1/${k##*/}.gz
+		fi
+	fi
+done
