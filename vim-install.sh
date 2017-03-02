@@ -1,5 +1,10 @@
 #!/bin/bash
 VIM_VERSION=$(wget -cq https://github.com/vim/vim/releases -O - | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
+INSTDIR=$HOME/Programs/vim-${VIM_VERSION}/INST
+datadir=/usr/share
+bindir=/usr/bin
+prefix=$INSTDIR/usr
+EDT=$HOME/GitHub/mine/editors
 
 sudo apt-get build-dep -y vim
 
@@ -20,7 +25,7 @@ else
 fi
 
 ./configure \
-      --prefix=$HOME/Programs/vim-${VIM_VERSION}/INST/usr \
+      --prefix=$prefix \
       --enable-gui=gtk2 \
       --with-features=huge \
       --enable-cscope \
