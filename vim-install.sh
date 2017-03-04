@@ -4,7 +4,7 @@ if [[ "$1" == "uninstall" ]]; then
 	sudo rm /usr/local/share/pixmaps/{gvim,vim}.png
 	sudo rm /usr/local/share/man/man1/{eview,evim,ex,gview,gvim,gvimdiff,rgview,rgvim,rview,rvim,view,vim,vimdiff,vimtutor,xxd}.1.gz
 	sudo rm /usr/local/bin/{eview,evim,ex,gview,gvim,gvimdiff,rgview,rgvim,rview,rvim,view,vim,vimdiff,vimtutor,xxd}
-fi
+else
 
 if ! [[ -d $HOME/Programs ]]; then
 	mkdir -p $HOME/Programs
@@ -108,3 +108,4 @@ do
 		fi
 	fi
 done
+fi
