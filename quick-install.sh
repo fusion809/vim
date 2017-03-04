@@ -75,6 +75,9 @@ if ! [[ -d $HOME/.vim/syntax ]]; then
 	mkdir -p $HOME/.vim/syntax
 fi
 
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 vim +PluginInstall +qall
 
 cp vim/.vimrc $HOME
