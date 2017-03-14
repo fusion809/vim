@@ -37,6 +37,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'JuliaEditorSupport/julia-vim'
 " Better C/C++ support
 Plugin 'c.vim'
+Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
 
