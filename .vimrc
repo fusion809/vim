@@ -124,3 +124,5 @@ imap <c-s> <Esc>:w<CR>a
 set splitbelow
 set splitright
 
+" Should fix bizarre character issue I get under Gentoo per https://superuser.com/a/486549/222722
+let g:NERDTreeDirArrows=0
