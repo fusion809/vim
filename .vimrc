@@ -91,11 +91,9 @@ map <C-q> :qa!<CR>
 
 " Ctrl-v is Paste only works in gVim
 map <C-v> "+gP
-cmap <C-v> <C-R>+
 
 " Ctrl-x for Cut only works in gVim
 map <C-x> "+x
-cmap <C-x> <C-R>+
 
 " Build project with C-m
 map <C-m> :make<CR>
@@ -114,8 +112,8 @@ nmap <silent> <A-Right> :wincmd l<CR>
 exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 
-imap <S-Insert> <C-V>
-vmap <S-Insert> <C-V>
+imap <S-Insert> <C-v>
+vmap <S-Insert> <C-v>
 
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
