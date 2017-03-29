@@ -41,6 +41,7 @@ Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
 
+" Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
 
 " Molokai theme
@@ -79,22 +80,31 @@ let vim_markdown_preview_github=1
 " CTRL-X for Cut
 silent !stty -ixon > /dev/null 2>/dev/null
 
-" CTRL-A for Select All
-map <C-A> ggVG<CR>
+" Ctrl-a for Select All
+map <C-a> ggVG<CR>
 
-" CTRL-C is Copy only works in gVim
-map <C-C> "+y<CR>
+" Ctrl-c is Copy only works in gVim
+map <C-c> "+y<CR>
 
-" C-Q for Quit
-map <C-Q> :qa!<CR>
+" Ctrl-q for Quit
+map <C-q> :qa!<CR>
 
-" CTRL-V is Paste only works in gVim
-map <C-V> "+gP
-cmap <C-V> <C-R>+
+" Ctrl-v is Paste only works in gVim
+map <C-v> "+gP
+cmap <C-v> <C-R>+
 
-" CTRL-X for Cut only works in gVim
+" Ctrl-x for Cut only works in gVim
 map <C-x> "+x
 cmap <C-x> <C-R>+
+
+" Build project with C-m
+map <C-m> :make<CR>
+
+" Move between split windows
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
