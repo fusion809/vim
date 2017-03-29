@@ -81,22 +81,22 @@ let vim_markdown_preview_github=1
 silent !stty -ixon > /dev/null 2>/dev/null
 
 " Ctrl-a for Select All
-map <C-a> ggVG<CR>
+noremap <C-a> ggVG<CR>
 
 " Ctrl-c is Copy only works in gVim
-map <C-c> "+y<CR>
+noremap <C-c> "+y<CR>
 
 " Ctrl-q for Quit
-map <C-q> :qa!<CR>
+noremap <C-q> :qa!<CR>
 
-" Ctrl-v is Paste only works in gVim
-map <C-v> "+gP
+" Ctrl-v is paste
+noremap <C-v> "+gP
 
-" Ctrl-x for Cut only works in gVim
-map <C-x> "+x
+" Ctrl-x for cut
+noremap <C-x> "+x
 
 " Build project with C-m
-map <C-m> :make<CR>
+noremap <C-m> :make<CR>
 
 " Move between split windows
 nmap <silent> <A-Up> :wincmd k<CR>
