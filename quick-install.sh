@@ -47,6 +47,24 @@ Server = http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$(
 pacman -Syu --noconfirm
 pacman -S gvim-gtk2 --noconfirm
 EOF
+elif [[ "${DISTRO_NAME}" == "Debian" ]]; then
+    if [[ "${DISTRO_VERSION}" == "8" ]]; then
+    sudo -s -- << EOF
+wget -nv http://download.opensuse.org/repositories/home:fusion809/Debian_8.0/Release.key -O Release.key
+apt-key add - < Release.key
+echo 'deb http://download.opensuse.org/repositories/home:/fusion809/Debian_8.0/ /' > /etc/apt/sources.list.d/vim.list 
+apt-get update
+apt-get install -y vim vim-gtk2
+EOF
+    fi
+elif [[ "${DISTRO_NAME}" == "Ubuntu" ]]; then
+    sudo -s -- << EOF
+wget -nv http://download.opensuse.org/repositories/home:fusion809/xUbuntu_${DISTRO_VERSION}/Release.key -O Release.key
+apt-key add - < Release.key
+echo 'deb http://download.opensuse.org/repositories/home:/fusion809/xUbuntu_${DISTRO_VERSION}/ /' > /etc/apt/sources.list.d/vim.list
+apt-get update
+apt-get install -y vim vim-gtk2
+EOF
 else
 	printf "Either you are using an unsupported platform or there is a bug in this installer script. Supported platforms are presently supported versions of CentOS, Fedora, Mageia, openSUSE, RHEL and Scientific Linux, except RHEL 5. Also SLE 12/12 P1/12 P2\n"
 fi
