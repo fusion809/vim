@@ -5,15 +5,15 @@ OBS_URL="http://download.opensuse.org/repositories/home:fusion809/"
 
 if [[ "${DISTRO_NAME}" == "Fedora" ]]; then
 	sudo dnf config-manager --add-repo $OBS_URL/Fedora_${DISTRO_VERSION}/home:fusion809.repo
-	sudo dnf install -y vim vim-gtk2 vim-gtk3 git
+	sudo dnf install -y vim vim-gtk2 git
 elif [[ "${DISTRO_NAME}" == "openSUSE Tumbleweed" ]]; then
 	sudo zypper addrepo $OBS_URL/openSUSE_Tumbleweed/home:fusion809.repo
 	sudo zypper refresh
-	sudo zypper install -y vim gvim-gtk2 gvim-gtk3 git
+	sudo zypper install -y vim gvim-gtk2 git
 elif [[ "${DISTRO_NAME}" == "openSUSE Leap" ]]; then
 	sudo zypper addrepo $OBS_URL/openSUSE_Leap_${DISTRO_VERSION}/home:fusion809.repo
 	sudo zypper refresh
-	sudo zypper install -y vim gvim-gtk2 gvim-gtk3 git
+	sudo zypper install -y vim gvim-gtk2 git
 elif [[ "${DISTRO_NAME}" == "CentOS Linux" ]]; then
 	cd /etc/yum.repos.d/
 	sudo curl -sOL $OBS_URL/CentOS_${DISTRO_VERSION}/home:fusion809.repo
@@ -22,10 +22,10 @@ elif [[ "${DISTRO_NAME}" == "Mageia" ]]; then
 	if [[ "${DISTRO_VERSION}" == "5" ]]; then
 		sudo urpmi.addmedia home:fusion809 $OBS_URL/Mageia_${DISTRO_VERSION}/
 		sudo urpmi.update -a
-		sudo urpmi vim vim-gtk2 vim-gtk3 git
+		sudo urpmi vim vim-gtk2 git
         else 
 		sudo dnf config-manager --add-repo $OBS_URL/Mageia_Cauldron/home:fusion809.repo
-		sudo dnf install -y vim vim-gtk2 vim-gtk3 git
+		sudo dnf install -y vim vim-gtk2 git
 	fi
 elif [[ "${DISTRO_NAME}" == "RHEL" ]] || [[ "${DISTRO_NAME}" == "Red Hat Enterprise Linux" ]]; then
 	cd /etc/yum.repos.d/
@@ -38,7 +38,7 @@ elif [[ "${DISTRO_NAME}" == "Scientific Linux" ]]; then
 elif [[ "${DISTRO_NAME}" == "SLE" ]] || [[ "${DISTRO_NAME}" == "SUSE Linux Enterprise"* ]]; then
 	sudo zypper addrepo $OBS_URL/SLE_${DISTRO_VERSION/ /_}/home:fusion809.repo
         sudo zypper refresh
-        sudo zypper install -y vim gvim-gtk2 gvim-gtk3 git
+        sudo zypper install -y vim gvim-gtk2 git
 elif [[ "${DISTRO_NAME}" == "Manjaro Linux" ]] || [[ "${DISTRO_NAME}" == "Arch Linux" ]]; then
 	sudo -s -- << EOF
 echo -e "[home_fusion809_Arch_Extra]
