@@ -126,5 +126,9 @@ set splitright
 " CentOS)
 set ruler
 
+" Per https://vi.stackexchange.com/a/2163/11076
+" Should fix backspace issues on CentOS and other VMs
+set backspace=indent,eol,start
+
 " Should fix bizarre character issue I get under Gentoo per https://superuser.com/a/486549/222722
 let g:NERDTreeDirArrows=0
