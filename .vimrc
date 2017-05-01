@@ -40,8 +40,6 @@ Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
-" Bash support
-Plugin 'WolfgangMehner/bash-support'
 
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
