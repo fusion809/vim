@@ -56,6 +56,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " file associations
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
+au BufNewFile,BufRead *.zsh-theme setlocal ft=sh
 
 " Spell-checking
 augroup lexical
