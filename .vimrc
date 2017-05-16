@@ -40,6 +40,18 @@ Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
+" TOML support -- useful for Hugo
+Plugin 'cespare/vim-toml'
+" PyMOL support
+Plugin 'PyMol-syntax'
+" Linter support
+Plugin 'vim-syntastic/syntastic'
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
 
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
