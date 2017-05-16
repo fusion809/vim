@@ -64,7 +64,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_checkers = ['Clang Check']
+let g:syntastic_cpp_checkers = ['ClangCheck']
 
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
