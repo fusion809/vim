@@ -19,6 +19,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mdlerch/vim-gnuplot'
 """ git manager
 Plugin 'tpope/vim-fugitive'
+""" Commit browser
+Plugin 'junegunn/gv.vim'
 """ Molokai theme
 Plugin 'tomasr/molokai'
 """ Markdown
@@ -52,6 +54,17 @@ set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_cpp_checkers = ['Clang Check']
 
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
