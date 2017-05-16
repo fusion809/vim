@@ -98,6 +98,10 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 vim +PluginInstall +qall
 
-cp vim/.vimrc $HOME
+if [[ $(uname) == "Linux" ]]; then
+    cp vim/.vimrc $HOME
+else
+    cp vim/.vimrc-cross $HOME/.vimrc
+fi
 cp vim/sh.vim $HOME/.vim/syntax
 cp vim/*.add $HOME/.vim/spell
