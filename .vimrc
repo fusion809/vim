@@ -64,7 +64,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_checkers = ['ClangCheck']
+let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_python_checkers = ['pylint']
 
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
@@ -82,6 +83,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
 au BufNewFile,BufRead *.zsh-theme setlocal ft=sh
+au BufNewFile,BufRead *.py setlocal number
+au BufNewFile,BufRead *.c setlocal number
+au BufNewFile,BufRead *.cpp setlocal number
+au BufNewFile,BufRead *.cxx setlocal number
+au BufNewFile,BufRead *.cc setlocal number
+au BufNewFile,BufRead *.C setlocal number
+au BufNewFile,BufRead *.h setlocal number
+au BufNewFile,BufRead *.hpp setlocal number
 
 " Spell-checking
 augroup lexical
@@ -89,6 +98,7 @@ augroup lexical
   autocmd FileType markdown,mkd call lexical#init()
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
+
 augroup END
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_au', 'en_gb',]
@@ -155,6 +165,9 @@ set ruler
 " Per https://vi.stackexchange.com/a/2163/11076
 " Should fix backspace issues on CentOS and other VMs
 set backspace=indent,eol,start
+
+" Fix issue with devicons per gitter chat
+set ambiwidth=double
 
 " Should fix bizarre character issue I get under Gentoo per https://superuser.com/a/486549/222722
 let g:NERDTreeDirArrows=0
