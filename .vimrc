@@ -100,9 +100,9 @@ augroup lexical
   autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
 
-setlocal spell
 let g:lexical#spell = 1
 let g:lexical#spelllang = ['en_au', 'en_gb',]
+setlocal spell
 
 " Markdown mode
 let g:vim_markdown_folding_disabled = 1
