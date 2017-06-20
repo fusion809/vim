@@ -16,11 +16,11 @@ Plugin 'scrooloose/nerdtree'
 " Adds too much time to startup
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "" Gnuplot
-Plugin 'mdlerch/vim-gnuplot'
+"Plugin 'mdlerch/vim-gnuplot'
 """ git manager
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 """ Commit browser
-Plugin 'junegunn/gv.vim'
+"Plugin 'junegunn/gv.vim'
 """ Molokai theme
 Plugin 'tomasr/molokai'
 """ Markdown
@@ -28,24 +28,24 @@ Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
 Plugin 'reedes/vim-lexical'
 """ Markdown Preview
-Plugin 'JamshedVesuna/vim-markdown-preview'
+"Plugin 'JamshedVesuna/vim-markdown-preview'
 """ Vala syntax-highlighting plugin, seemingly unmaintained since 7 Sep 2012
-Plugin 'tkztmk/vim-vala'
+"Plugin 'tkztmk/vim-vala'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
 "Plugin 'klen/python-mode'
 """ CoffeeScript mode
-Plugin 'kchmck/vim-coffee-script'
+"Plugin 'kchmck/vim-coffee-script'
 " Julia support
-Plugin 'JuliaEditorSupport/julia-vim'
+"Plugin 'JuliaEditorSupport/julia-vim'
 " Better C/C++ support
 Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
 " Go support
 "Plugin 'fatih/vim-go'
 " TOML support -- useful for Hugo
-Plugin 'cespare/vim-toml'
+"Plugin 'cespare/vim-toml'
 " PyMOL support
-Plugin 'PyMol-syntax'
+"Plugin 'PyMol-syntax'
 " Linter support
 "Plugin 'vim-syntastic/syntastic'
 
