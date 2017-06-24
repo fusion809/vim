@@ -39,14 +39,6 @@ elif [[ "${DISTRO_NAME}" == "SLE" ]] || [[ "${DISTRO_NAME}" == "SUSE Linux Enter
 	sudo zypper addrepo $OBS_URL/SLE_${DISTRO_VERSION/ /_}/home:fusion809.repo
         sudo zypper refresh
         sudo zypper install -y vim gvim-gtk2 git
-elif [[ "${DISTRO_NAME}" == "Manjaro Linux" ]] || [[ "${DISTRO_NAME}" == "Arch Linux" ]]; then
-	sudo -s -- << EOF
-echo -e "[home_fusion809_Arch_Extra]
-SigLevel = Never
-Server = http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$(uname -m)" >> /etc/pacman.conf
-pacman -Syu --noconfirm
-pacman -S gvim-gtk2 --noconfirm
-EOF
 elif [[ "${DISTRO_NAME}" == "Debian" ]]; then
     if [[ "${DISTRO_VERSION}" == "8" ]]; then
     sudo -s -- << EOF
