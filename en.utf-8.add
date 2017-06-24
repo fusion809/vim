@@ -403,3 +403,7 @@ chrooting
 rslave
 rbind
 resolv
+init
+bashrc
+zshrc
+mkconfig
