@@ -1,5 +1,5 @@
-" Copyright (C) Brenton Horne 2016-2017
-" Maintainer : Brenton Horne <brentonhorne77gmail.com>
+" Copyright (C) fusion809 2016-2017
+" Maintainer : fusion809
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
