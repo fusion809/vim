@@ -44,6 +44,7 @@ elif [[ "${DISTRO_NAME}" == "Debian" ]]; then
     sudo -s -- << EOF
 wget -nv http://download.opensuse.org/repositories/home:fusion809/Debian_8.0/Release.key -O Release.key
 apt-key add - < Release.key
+rm Release.key
 echo 'deb http://download.opensuse.org/repositories/home:/fusion809/Debian_8.0/ /' > /etc/apt/sources.list.d/vim.list 
 apt-get update
 apt-get install -y vim vim-gtk git
@@ -52,6 +53,7 @@ EOF
 sudo -s -- << EOF
 wget -nv http://download.opensuse.org/repositories/home:fusion809/Debian_9.0/Release.key -O Release.key
 apt-key add - < Release.key
+rm Release.key
 echo 'deb http://download.opensuse.org/repositories/home:/fusion809/Debian_9.0/ /' > /etc/apt/sources.list.d/vim.list
 apt-get update
 apt-get install -y vim vim-gtk git
