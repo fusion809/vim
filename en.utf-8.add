@@ -407,3 +407,11 @@ init
 bashrc
 zshrc
 mkconfig
+Mod4
+pango
+depclean
+zypper
+bspwm
+MidnightBSD
+GuixSD
+TrueOS

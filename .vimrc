@@ -1,5 +1,5 @@
-" Copyright (C) fusion809 2016-2017
-" Maintainer : fusion809
+" Copyright (C) Brenton Horne 2016-2017
+" Maintainer : Brenton Horne <brentonhorne77gmail.com>
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
@@ -48,6 +48,13 @@ Plugin 'justmao945/vim-clang'
 "Plugin 'PyMol-syntax'
 " Linter support
 "Plugin 'vim-syntastic/syntastic'
+" i3 config
+Plugin 'potatoesmaster/i3-vim-syntax'
+" Vimshell, mighty find shell for Vim
+Plugin 'shougo/vimshell.vim'
+Plugin 'shougo/vimproc'
+" tabulous, add tabs to Vim
+Plugin 'webdevel/tabulous'
 
 " Always show statusline
 set laststatus=2
