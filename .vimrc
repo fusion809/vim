@@ -23,6 +23,14 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'junegunn/gv.vim'
 """ Molokai theme
 Plugin 'tomasr/molokai'
+""" One Dark theme
+Plugin 'joshdick/onedark.vim'
+""" Gruvbox
+Plugin 'morhetz/gruvbox'
+""" vim-colors-solarized
+Plugin 'altercation/vim-colors-solarized'
+""" jellybeans scheme
+Plugin 'nanotech/jellybeans.vim'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
@@ -53,8 +61,10 @@ Plugin 'potatoesmaster/i3-vim-syntax'
 " Vimshell, mighty find shell for Vim
 Plugin 'shougo/vimshell.vim'
 Plugin 'shougo/vimproc'
-" tabulous, add tabs to Vim
-Plugin 'webdevel/tabulous'
+" tabulous, add tabs to Vim -- doesn't seem to work, no tabs are shown.
+"Plugin 'webdevel/tabulous'
+"let loadTabulous = 0
+"let tabulousLabelLeftStr = ' '
 
 " Always show statusline
 set laststatus=2
@@ -79,7 +89,12 @@ execute pathogen#infect()
 
 " Molokai theme
 syntax on
+"colorscheme gruvbox
+"colorscheme solarized
 colorscheme molokai
+"colorscheme jellybeans
+"colorscheme onedark
+
 
 " NERDTree
 let NERDTreeShowHidden=1
