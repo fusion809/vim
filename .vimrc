@@ -27,10 +27,16 @@ Plugin 'tomasr/molokai'
 Plugin 'joshdick/onedark.vim'
 """ Gruvbox
 Plugin 'morhetz/gruvbox'
+""" base16-vim
+Plugin 'chriskempson/base16-vim'
+""" unite
+Plugin 'ujihisa/unite-colorscheme'
 """ vim-colors-solarized
 Plugin 'altercation/vim-colors-solarized'
 """ jellybeans scheme
 Plugin 'nanotech/jellybeans.vim'
+""" papercolor
+Plugin 'NLKNguyen/papercolor-theme'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
@@ -65,6 +71,17 @@ Plugin 'shougo/vimproc'
 "Plugin 'webdevel/tabulous'
 "let loadTabulous = 0
 "let tabulousLabelLeftStr = ' '
+" YouCompleteMe auto-complete
+"Plugin 'Valloric/YouCompleteMe'
+" Lua Support 2
+" Plugin 'wolfgangmehner/lua-support'
+" vim-lua-ftplugin
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-lua-ftplugin'
+let g:lua_complete_omni = 1
+" tagbar for function/variable list
+Plugin 'majutsushi/tagbar'
+nmap <A-F8> :TagbarToggle<CR>
 
 " Always show statusline
 set laststatus=2
@@ -94,7 +111,11 @@ syntax on
 colorscheme molokai
 "colorscheme jellybeans
 "colorscheme onedark
+"colorscheme base16-default-dark
+"set t_Co=256   " This is may or may not needed.
 
+"set background=dark
+"colorscheme PaperColor
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -158,10 +179,10 @@ noremap <C-x> "+x
 noremap <C-m> :make<CR>
 
 " Move between split windows
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
