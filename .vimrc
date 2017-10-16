@@ -19,6 +19,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'mdlerch/vim-gnuplot'
 """ git manager
 "Plugin 'tpope/vim-fugitive'
+"" git gutter
+Plugin 'airblade/vim-gitgutter'
 """ Commit browser
 "Plugin 'junegunn/gv.vim'
 """ Molokai theme
@@ -75,34 +77,33 @@ Plugin 'shougo/vimproc'
 "Plugin 'Valloric/YouCompleteMe'
 " Lua Support 2
 " Plugin 'wolfgangmehner/lua-support'
-" vim-lua-ftplugin
+" vim-lua-ftplugin -- provides Vim autocompletions
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
-let g:lua_complete_omni = 1
 " tagbar for function/variable list
 Plugin 'majutsushi/tagbar'
 nmap <A-F8> :TagbarToggle<CR>
 
 " Always show statusline
-set laststatus=2
+set laststatus=3
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 "set t_Co=256
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-"let g:syntastic_cpp_checkers = ['clang_check']
-"let g:syntastic_python_checkers = ['pylint']
-
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_python_checkers = ['pylint']
 
 " Molokai theme
 syntax on
