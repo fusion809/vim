@@ -74,12 +74,13 @@ else
 	printf "Either you are using an unsupported platform or there is a bug in this installer script. Supported platforms are presently supported versions of CentOS, Fedora, Mageia, openSUSE, RHEL and Scientific Linux, except RHEL 5. Also SLE 12/12 P1/12 P2\n"
 fi
 
+export EDT=$HOME/GitHub/mine/editors
 if ! [[ -d $HOME/GitHub/mine/editors/vim ]]; then
-	mkdir -p $HOME/GitHub/mine/editors
-	cd $HOME/GitHub/mine/editors
+	mkdir -p $EDT
+	cd $EDT
 	git clone https://github.com/fusion809/vim vim
 else
-	cd $HOME/GitHub/mine/editors/vim
+	cd $EDT/vim
 	git pull --all
 	cd ..
 fi
@@ -107,12 +108,12 @@ cd ~/.vim/bundle && \
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 if [[ $(uname) == "Linux" ]]; then
-    cp vim/.vimrc $HOME
+    cp $EDT/vim/.vimrc $HOME
 else
-    cp vim/.vimrc-cross $HOME/.vimrc
+    cp $EDT/vim/.vimrc-cross $HOME/.vimrc
 fi
-cp vim/sh.vim $HOME/.vim/syntax
-cp vim/*.add $HOME/.vim/spell
+cp $EDT/vim/sh.vim $HOME/.vim/syntax
+cp $EDT/vim/*.add $HOME/.vim/spell
 
 # Install Vundle plugins -- or try to at least, doesn't seem to work
 vim +PluginInstall +qall
