@@ -19,15 +19,18 @@ elif [[ "${DISTRO_NAME}" == "CentOS Linux" ]]; then
 	sudo curl -sOL $OBS_URL/CentOS_${DISTRO_VERSION}/home:fusion809.repo
         sudo yum install -y vim vim-gtk2
 elif [[ "${DISTRO_NAME}" == "Mageia" ]]; then
-	if [[ "${DISTRO_VERSION}" == "5" ]]; then
+	if [[ "${DISTRO_VERSION}" == "5"* ]]; then
 		sudo urpmi.addmedia home:fusion809 $OBS_URL/Mageia_${DISTRO_VERSION}/
 		sudo urpmi.update -a
 		sudo urpmi vim vim-gtk2 git
+        elif [[ "${DISTRO_VERSION}" == "6"* ]]; then
+                sudo dnf config-manager --add-repo $OBS_URL/Mageia_${DISTRO_VERSION}/home:fusion809.repo
+                sudo dnf install -y vim vim-gtk2 git
         else 
 		sudo dnf config-manager --add-repo $OBS_URL/Mageia_Cauldron/home:fusion809.repo
 		sudo dnf install -y vim vim-gtk2 git
 	fi
-elif [[ "${DISTRO_NAME}" == "RHEL" ]] || [[ "${DISTRO_NAME}" == "Red Hat Enterprise Linux" ]]; then
+elif [[ "${DISTRO_NAME}" == "RHEL" ]] || [[ "${DISTRO_NAME}" == "Red Hat Enterprise Linux" ]] || [[ "${DISTRO_NAME}" == "Oracle Linux" ]]; then
 	cd /etc/yum.repos.d/
         sudo curl -sOL $OBS_URL/RHEL_${DISTRO_VERSION}/home:fusion809.repo
         sudo yum install -y vim vim-gtk2 git
@@ -95,10 +98,13 @@ if ! [[ -d $HOME/.vim/syntax ]]; then
 	mkdir -p $HOME/.vim/syntax
 fi
 
+# Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-vim +PluginInstall +qall
+# Install syntastic
+cd ~/.vim/bundle && \
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 if [[ $(uname) == "Linux" ]]; then
     cp vim/.vimrc $HOME
@@ -107,3 +113,6 @@ else
 fi
 cp vim/sh.vim $HOME/.vim/syntax
 cp vim/*.add $HOME/.vim/spell
+
+# Install Vundle plugins -- or try to at least, doesn't seem to work
+vim +PluginInstall +qall
