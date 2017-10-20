@@ -13,34 +13,38 @@ or:
 /bin/bash -c "$(curl -sL https://git.io/vS5Ng)"
 ```
 
-Several plugins I have deleted as they simply did not work or they slowed it down too much or they weren't used enough to justify keeping them. They include:
+Several plugins I have deleted as they simply did not work or they slowed it down too much or they weren't used enough to justify keeping them. They include (listed in Vim script format with the Vundle plugin manager to simplify adding them, should the need arise):
 
 ```vim
+""" git manager
+Plugin 'tpope/vim-fugitive'
+""" Commit browser
+Plugin 'junegunn/gv.vim'
 " YouCompleteMe auto-complete
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 """ Markdown Preview
-"Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 """ Vala syntax-highlighting plugin, seemingly unmaintained since 7 Sep 2012
-"Plugin 'tkztmk/vim-vala'
+Plugin 'tkztmk/vim-vala'
 "" Gnuplot
-"Plugin 'mdlerch/vim-gnuplot'
+Plugin 'mdlerch/vim-gnuplot'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 """ CoffeeScript mode
-"Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Julia support
-"Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'JuliaEditorSupport/julia-vim'
 " Go support
-"Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 " TOML support -- useful for Hugo
-"Plugin 'cespare/vim-toml'
+Plugin 'cespare/vim-toml'
 " PyMOL support
-"Plugin 'PyMol-syntax'
+Plugin 'PyMol-syntax'
 " Linter support
-"Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 " tabulous, add tabs to Vim -- doesn't seem to work, no tabs are shown.
-"Plugin 'webdevel/tabulous'
-"let loadTabulous = 0
-"let tabulousLabelLeftStr = ' '
+Plugin 'webdevel/tabulous'
+let loadTabulous = 0
+let tabulousLabelLeftStr = ' '
 ```
 
