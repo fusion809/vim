@@ -15,74 +15,48 @@ call vundle#rc()
 Plugin 'scrooloose/nerdtree'
 " Adds too much time to startup
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"" Gnuplot
-"Plugin 'mdlerch/vim-gnuplot'
-""" git manager
-"Plugin 'tpope/vim-fugitive'
 "" git gutter
 Plugin 'airblade/vim-gitgutter'
-""" Commit browser
-"Plugin 'junegunn/gv.vim'
 """ Molokai theme
 Plugin 'tomasr/molokai'
 """ One Dark theme
-Plugin 'joshdick/onedark.vim'
+"Plugin 'joshdick/onedark.vim'
 """ Gruvbox
-Plugin 'morhetz/gruvbox'
+"Plugin 'morhetz/gruvbox'
 """ base16-vim
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 """ unite
-Plugin 'ujihisa/unite-colorscheme'
+"Plugin 'ujihisa/unite-colorscheme'
 """ vim-colors-solarized
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 """ jellybeans scheme
-Plugin 'nanotech/jellybeans.vim'
+"Plugin 'nanotech/jellybeans.vim'
 """ papercolor
-Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'NLKNguyen/papercolor-theme'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
 Plugin 'reedes/vim-lexical'
-""" Markdown Preview
-"Plugin 'JamshedVesuna/vim-markdown-preview'
-""" Vala syntax-highlighting plugin, seemingly unmaintained since 7 Sep 2012
-"Plugin 'tkztmk/vim-vala'
-""" Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
-"Plugin 'klen/python-mode'
-""" CoffeeScript mode
-"Plugin 'kchmck/vim-coffee-script'
-" Julia support
-"Plugin 'JuliaEditorSupport/julia-vim'
 " Better C/C++ support
 Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
-" Go support
-"Plugin 'fatih/vim-go'
-" TOML support -- useful for Hugo
-"Plugin 'cespare/vim-toml'
-" PyMOL support
-"Plugin 'PyMol-syntax'
-" Linter support
-"Plugin 'vim-syntastic/syntastic'
 " i3 config
 Plugin 'potatoesmaster/i3-vim-syntax'
 " Vimshell, mighty find shell for Vim
 Plugin 'shougo/vimshell.vim'
 Plugin 'shougo/vimproc'
-" tabulous, add tabs to Vim -- doesn't seem to work, no tabs are shown.
-"Plugin 'webdevel/tabulous'
-"let loadTabulous = 0
-"let tabulousLabelLeftStr = ' '
-" YouCompleteMe auto-complete
-"Plugin 'Valloric/YouCompleteMe'
-" Lua Support 2
-" Plugin 'wolfgangmehner/lua-support'
 " vim-lua-ftplugin -- provides Vim autocompletions
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-lua-ftplugin'
 " tagbar for function/variable list
 Plugin 'majutsushi/tagbar'
 nmap <A-F8> :TagbarToggle<CR>
+" Nix files
+Plugin 'lnl7/vim-nix'
+"" Gnuplot
+Plugin 'mdlerch/vim-gnuplot'
+""" Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
+Plugin 'klen/python-mode'
 
 " Always show statusline
 set laststatus=3
@@ -103,6 +77,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_cpp_checkers = ['clang_check']
+let g:syntastic_lua_checkers = ['luac']
 let g:syntastic_python_checkers = ['pylint']
 
 " Molokai theme

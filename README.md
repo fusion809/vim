@@ -26,10 +26,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 """ Vala syntax-highlighting plugin, seemingly unmaintained since 7 Sep 2012
 Plugin 'tkztmk/vim-vala'
-"" Gnuplot
-Plugin 'mdlerch/vim-gnuplot'
-""" Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
-Plugin 'klen/python-mode'
 """ CoffeeScript mode
 Plugin 'kchmck/vim-coffee-script'
 " Julia support
@@ -40,8 +36,6 @@ Plugin 'fatih/vim-go'
 Plugin 'cespare/vim-toml'
 " PyMOL support
 Plugin 'PyMol-syntax'
-" Linter support
-Plugin 'vim-syntastic/syntastic'
 " tabulous, add tabs to Vim -- doesn't seem to work, no tabs are shown.
 Plugin 'webdevel/tabulous'
 let loadTabulous = 0
