@@ -19,20 +19,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 """ Molokai theme
 Plugin 'tomasr/molokai'
-""" One Dark theme
-"Plugin 'joshdick/onedark.vim'
-""" Gruvbox
-"Plugin 'morhetz/gruvbox'
-""" base16-vim
-"Plugin 'chriskempson/base16-vim'
-""" unite
-"Plugin 'ujihisa/unite-colorscheme'
-""" vim-colors-solarized
-"Plugin 'altercation/vim-colors-solarized'
-""" jellybeans scheme
-"Plugin 'nanotech/jellybeans.vim'
-""" papercolor
-"Plugin 'NLKNguyen/papercolor-theme'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
