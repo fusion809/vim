@@ -50,7 +50,7 @@ apt-key add - < Release.key
 rm Release.key
 echo 'deb http://download.opensuse.org/repositories/home:/fusion809/Debian_8.0/ /' > /etc/apt/sources.list.d/vim.list 
 apt-get update
-apt-get install -y vim vim-gtk git
+apt-get install -y vim vim-gtk git curl
 EOF
     elif [[ "${DISTRO_VERSION}" == "9" ]]; then
 sudo -s -- << EOF
@@ -59,7 +59,7 @@ apt-key add - < Release.key
 rm Release.key
 echo 'deb http://download.opensuse.org/repositories/home:/fusion809/Debian_9.0/ /' > /etc/apt/sources.list.d/vim.list
 apt-get update
-apt-get install -y vim vim-gtk git
+apt-get install -y vim vim-gtk git curl
 EOF
     fi
 elif [[ "${DISTRO_NAME}" == "Ubuntu" ]]; then
@@ -68,7 +68,7 @@ wget -nv http://download.opensuse.org/repositories/home:fusion809/xUbuntu_${DIST
 apt-key add - < Release.key
 echo 'deb http://download.opensuse.org/repositories/home:/fusion809/xUbuntu_${DISTRO_VERSION}/ /' > /etc/apt/sources.list.d/vim.list
 apt-get update
-apt-get install -y vim vim-gtk git
+apt-get install -y vim vim-gtk git curl
 EOF
 else
 	printf "Either you are using an unsupported platform or there is a bug in this installer script. Supported platforms are presently supported versions of CentOS, Fedora, Mageia, openSUSE, RHEL and Scientific Linux, except RHEL 5. Also SLE 12/12 P1/12 P2\n"
