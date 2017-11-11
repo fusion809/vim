@@ -103,9 +103,13 @@ fi
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Install syntastic
+# Install syntastic & YouCompleteMe
 cd ~/.vim/bundle && \
-git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+git clone --depth=1 https://github.com/vim-syntastic/syntastic.git && \
+git clone https://github.com/Valloric/YouCompleteMe.git && \
+cd YouCompleteMe && \
+YCM_CORES=1 ./install.py --js-completer
+
 
 if [[ $(uname) == "Linux" ]]; then
     cp $EDT/vim/.vimrc $HOME
