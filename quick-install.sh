@@ -100,14 +100,22 @@ if ! [[ -d $HOME/.vim/syntax ]]; then
 fi
 
 # Install pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+mkdir -p ~/.vim/autoload ~/.vim/bundle 
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Install syntastic & YouCompleteMe
-cd ~/.vim/bundle && \
-git clone --depth=1 https://github.com/vim-syntastic/syntastic.git && \
-git clone https://github.com/Valloric/YouCompleteMe.git && \
-cd YouCompleteMe && \
+cd ~/.vim/bundle
+if ! [[ -d $HOME/.vim/bundle/syntastic ]]; then
+    git clone --depth=1 https://github.com/vim-syntastic/syntastic.git 
+else
+    cd syntastic && git pull origin master && cd -
+fi
+if ! [[ -d $HOME/.vim/bundle/syntastic ]]; then
+    git clone https://github.com/Valloric/YouCompleteMe.git 
+else
+    cd YouCompleteMe && git pull origin master && cd -
+fi
+cd YouCompleteMe 
 YCM_CORES=1 ./install.py --js-completer
 
 
