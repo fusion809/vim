@@ -31,9 +31,9 @@ Plugin 'potatoesmaster/i3-vim-syntax'
 " Vimshell, mighty find shell for Vim
 Plugin 'shougo/vimshell.vim'
 Plugin 'shougo/vimproc'
-" vim-lua-ftplugin -- provides Vim autocompletions
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-lua-ftplugin'
+" vim-lua-ftplugin -- provides Vim autocompletions -- can slow one down though
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-lua-ftplugin'
 " tagbar for function/variable list
 Plugin 'majutsushi/tagbar'
 nmap <A-F8> :TagbarToggle<CR>
@@ -42,7 +42,9 @@ Plugin 'lnl7/vim-nix'
 "" Gnuplot
 Plugin 'mdlerch/vim-gnuplot'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
+"Plugin 'othree/jspc.vim'
+let g:ycm_server_python_interpreter='/usr/bin/python2'
 
 " Always show statusline
 set laststatus=3
@@ -53,18 +55,20 @@ set laststatus=3
 " Needed as otherwise following Molokai and NERDTree lines will fail!
 execute pathogen#infect()
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_checkers = ['clang_check']
-let g:syntastic_lua_checkers = ['luac']
-let g:syntastic_python_checkers = ['pylint']
+"let g:syntastic_cpp_checkers = ['clang_check']
+"let g:syntastic_lua_checkers = ['luac']
+"let g:syntastic_python_checkers = ['pylint']
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " Molokai theme
 syntax on
@@ -87,6 +91,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " file associations
 au BufNewFile,BufRead *.m setlocal ft=matlab
 au BufNewFile,BufRead virc setlocal ft=vim
+au BufNewFile,BufRead .spacemacs setlocal ft=lisp
 au BufNewFile,BufRead *.zsh-theme setlocal ft=sh
 au BufNewFile,BufRead *.py setlocal number
 au BufNewFile,BufRead *.c setlocal number
@@ -177,3 +182,4 @@ set ambiwidth=double
 
 " Should fix bizarre character issue I get under Gentoo per https://superuser.com/a/486549/222722
 let g:NERDTreeDirArrows=0
+
