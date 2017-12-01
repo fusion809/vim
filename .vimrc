@@ -19,6 +19,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 """ Molokai theme
 Plugin 'tomasr/molokai'
+""" Monokai
+"Plugin 'reewr/vim-monokai-phoenix'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
@@ -28,12 +30,9 @@ Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
 " i3 config
 Plugin 'potatoesmaster/i3-vim-syntax'
-" Vimshell, mighty find shell for Vim
+" Vimshell, mighty fine shell for Vim
 Plugin 'shougo/vimshell.vim'
 Plugin 'shougo/vimproc'
-" vim-lua-ftplugin -- provides Vim autocompletions -- can slow one down though
-"Plugin 'xolox/vim-misc'
-"Plugin 'xolox/vim-lua-ftplugin'
 " tagbar for function/variable list
 Plugin 'majutsushi/tagbar'
 nmap <A-F8> :TagbarToggle<CR>
@@ -41,10 +40,14 @@ nmap <A-F8> :TagbarToggle<CR>
 Plugin 'lnl7/vim-nix'
 "" Gnuplot
 Plugin 'mdlerch/vim-gnuplot'
+let g:ycm_server_python_interpreter='/usr/bin/python2'
+" vim-lua-ftplugin -- provides Vim autocompletions -- can slow one down though
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-lua-ftplugin'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
 "Plugin 'klen/python-mode'
 "Plugin 'othree/jspc.vim'
-let g:ycm_server_python_interpreter='/usr/bin/python2'
+
 
 " Always show statusline
 set laststatus=3
@@ -75,6 +78,7 @@ syntax on
 "colorscheme gruvbox
 "colorscheme solarized
 colorscheme molokai
+"colorscheme monokai-phoenix
 "colorscheme jellybeans
 "colorscheme onedark
 "colorscheme base16-default-dark
@@ -182,4 +186,6 @@ set ambiwidth=double
 
 " Should fix bizarre character issue I get under Gentoo per https://superuser.com/a/486549/222722
 let g:NERDTreeDirArrows=0
+
+set noeb vb t_vb=
 
