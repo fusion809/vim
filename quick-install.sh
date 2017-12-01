@@ -110,7 +110,7 @@ if ! [[ -d $HOME/.vim/bundle/syntastic ]]; then
 else
     cd syntastic && git pull origin master && cd -
 fi
-if ! [[ -d $HOME/.vim/bundle/syntastic ]]; then
+if ! [[ -d $HOME/.vim/bundle/YouCompleteMe ]]; then
     git clone https://github.com/Valloric/YouCompleteMe.git 
 else
     cd YouCompleteMe && git pull origin master && cd -
