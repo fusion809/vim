@@ -110,14 +110,14 @@ if ! [[ -d $HOME/.vim/bundle/syntastic ]]; then
 else
     cd syntastic && git pull origin master && cd -
 fi
-if ! [[ -d $HOME/.vim/bundle/YouCompleteMe ]]; then
-    git clone https://github.com/Valloric/YouCompleteMe.git 
-else
-    cd YouCompleteMe && git pull origin master && cd -
-    git submodule update --init --recursive
-fi
-cd YouCompleteMe 
-YCM_CORES=1 ./install.py --js-completer
+#if ! [[ -d $HOME/.vim/bundle/YouCompleteMe ]]; then
+#    git clone https://github.com/Valloric/YouCompleteMe.git 
+#else
+#    cd YouCompleteMe && git pull origin master && cd -
+#    git submodule update --init --recursive
+#fi
+#cd YouCompleteMe 
+#YCM_CORES=1 ./install.py --js-completer
 
 
 if [[ $(uname) == "Linux" ]]; then
