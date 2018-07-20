@@ -1,5 +1,5 @@
-" Copyright (C) Brenton Horne 2016-2018
-" Maintainer : Brenton Horne <brentonhorne77 at gmail dot com>
+" Copyright (C) Brenton Horne 2016-2017
+" Maintainer : Brenton Horne <brentonhorne77gmail.com>
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
@@ -11,6 +11,11 @@ call vundle#begin()
 call vundle#rc()
 
 "" Plugins
+""" airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 """ NERDTree
 Plugin 'scrooloose/nerdtree'
 " Adds too much time to startup
@@ -28,6 +33,8 @@ Plugin 'reedes/vim-lexical'
 " Better C/C++ support
 Plugin 'c.vim'
 Plugin 'justmao945/vim-clang'
+" PyMOL support
+Plugin 'PyMol-syntax'
 " i3 config
 Plugin 'potatoesmaster/i3-vim-syntax'
 " Vimshell, mighty fine shell for Vim
@@ -107,16 +114,16 @@ au BufNewFile,BufRead *.h setlocal number
 au BufNewFile,BufRead *.hpp setlocal number
 
 " Spell-checking
-augroup lexical
-  autocmd!
-  autocmd FileType markdown,mkd call lexical#init()
-  autocmd FileType textile call lexical#init()
-  autocmd FileType text call lexical#init({ 'spell': 0 })
-augroup END
+"augroup lexical
+"  autocmd!
+"  autocmd FileType markdown,mkd call lexical#init()
+"  autocmd FileType textile call lexical#init()
+"  autocmd FileType text call lexical#init({ 'spell': 0 })
+"augroup END
 
-let g:lexical#spell = 1
-let g:lexical#spelllang = ['en_au', 'en_gb',]
-setlocal spell
+"let g:lexical#spell = 1
+"let g:lexical#spelllang = ['en_au', 'en_gb',]
+"setlocal spell
 
 " Markdown mode
 let g:vim_markdown_folding_disabled = 1
@@ -147,13 +154,13 @@ noremap <C-v> "+gP
 noremap <C-x> "+x
 
 " Build project with C-m
-noremap <C-m> :make<CR>
+noremap <C-m> :make | copen
 
 " Move between split windows
-nmap <silent> <A-k> :wincmd k<CR>
-nmap <silent> <A-j> :wincmd j<CR>
-nmap <silent> <A-h> :wincmd h<CR>
-nmap <silent> <A-l> :wincmd l<CR>
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 " Pasting blockwise and linewise selections is not possible in Insert and
 " Visual mode without the +virtualedit feature.  They are pasted as if they
