@@ -154,7 +154,7 @@ noremap <C-v> "+gP
 noremap <C-x> "+x
 
 " Build project with C-m
-noremap <C-m> :make | copen
+noremap <C-m> :make<BAR>copen<CR>
 
 " Move between split windows
 nmap <silent> <A-Up> :wincmd k<CR>
