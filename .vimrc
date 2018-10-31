@@ -1,5 +1,5 @@
-" Copyright (C) Brenton Horne 2016-2017
-" Maintainer : Brenton Horne <brentonhorne77gmail.com>
+" Copyright (C) Brenton Horne 2016-2018
+" Maintainer : Brenton Horne
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
@@ -28,6 +28,7 @@ Plugin 'tomasr/molokai'
 "Plugin 'reewr/vim-monokai-phoenix'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 """ Spell-check/thesaurus
 Plugin 'reedes/vim-lexical'
 " Better C/C++ support
