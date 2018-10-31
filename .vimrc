@@ -1,5 +1,5 @@
 " Copyright (C) Brenton Horne 2016-2018
-" Maintainer : Brenton Horne
+" Maintainer : Brenton Horne <brentonhorne77@gmail.com>
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
