@@ -115,16 +115,16 @@ au BufNewFile,BufRead *.h setlocal number
 au BufNewFile,BufRead *.hpp setlocal number
 
 " Spell-checking
-"augroup lexical
-"  autocmd!
-"  autocmd FileType markdown,mkd call lexical#init()
-"  autocmd FileType textile call lexical#init()
-"  autocmd FileType text call lexical#init({ 'spell': 0 })
-"augroup END
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
 
-"let g:lexical#spell = 1
-"let g:lexical#spelllang = ['en_au', 'en_gb',]
-"setlocal spell
+let g:lexical#spell = 1
+let g:lexical#spelllang = ['en_au', 'en_gb',]
+setlocal spell
 
 " Markdown mode
 let g:vim_markdown_folding_disabled = 1
