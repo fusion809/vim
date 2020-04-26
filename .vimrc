@@ -55,7 +55,8 @@ let g:ycm_server_python_interpreter='/usr/bin/python2'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
 "Plugin 'klen/python-mode'
 "Plugin 'othree/jspc.vim'
-
+Plugin 'JuliaEditorSupport/julia-vim'
+let g:default_julia_version = "1.0"
 
 " Always show statusline
 set laststatus=3
