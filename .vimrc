@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 " Copyright (C) Brenton Horne 2016-2020
 "
 set nocompatible               " be iMproved
@@ -27,6 +28,7 @@ Plugin 'tomasr/molokai'
 "Plugin 'reewr/vim-monokai-phoenix'
 """ Markdown
 Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 """ Spell-check/thesaurus
 Plugin 'reedes/vim-lexical'
 " Better C/C++ support
@@ -55,7 +57,8 @@ let g:ycm_server_python_interpreter='/usr/bin/python2'
 """ Python linting, syntax-highlighting, code-completion, go-to-definition, etc.
 "Plugin 'klen/python-mode'
 "Plugin 'othree/jspc.vim'
-
+Plugin 'JuliaEditorSupport/julia-vim'
+let g:default_julia_version = "1.0"
 
 " Always show statusline
 set laststatus=3
@@ -115,16 +118,16 @@ au BufNewFile,BufRead *.h setlocal number
 au BufNewFile,BufRead *.hpp setlocal number
 
 " Spell-checking
-"augroup lexical
-"  autocmd!
-"  autocmd FileType markdown,mkd call lexical#init()
-"  autocmd FileType textile call lexical#init()
-"  autocmd FileType text call lexical#init({ 'spell': 0 })
-"augroup END
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
 
-"let g:lexical#spell = 1
-"let g:lexical#spelllang = ['en_au', 'en_gb',]
-"setlocal spell
+let g:lexical#spell = 1
+let g:lexical#spelllang = ['en_au', 'en_gb',]
+setlocal spell
 
 " Markdown mode
 let g:vim_markdown_folding_disabled = 1
