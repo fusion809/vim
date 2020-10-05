@@ -1,5 +1,4 @@
-" Copyright (C) Brenton Horne 2016-2017
-" Maintainer : Brenton Horne <brentonhorne77gmail.com>
+" Copyright (C) Brenton Horne 2016-2020
 "
 set nocompatible               " be iMproved
 filetype plugin on             " required!
@@ -31,22 +30,24 @@ Plugin 'plasticboy/vim-markdown'
 """ Spell-check/thesaurus
 Plugin 'reedes/vim-lexical'
 " Better C/C++ support
-Plugin 'c.vim'
-Plugin 'justmao945/vim-clang'
+"Plugin 'c.vim'
+"Plugin 'justmao945/vim-clang'
 " PyMOL support
-Plugin 'PyMol-syntax'
+"Plugin 'PyMol-syntax'
 " i3 config
 Plugin 'potatoesmaster/i3-vim-syntax'
 " Vimshell, mighty fine shell for Vim
-Plugin 'shougo/vimshell.vim'
-Plugin 'shougo/vimproc'
+"Plugin 'shougo/vimshell.vim'
+"Plugin 'shougo/vimproc'
 " tagbar for function/variable list
 Plugin 'majutsushi/tagbar'
 nmap <A-F8> :TagbarToggle<CR>
 " Nix files
-Plugin 'lnl7/vim-nix'
+"Plugin 'lnl7/vim-nix'
 "" Gnuplot
-Plugin 'mdlerch/vim-gnuplot'
+"Plugin 'mdlerch/vim-gnuplot'
+"" Julia
+Plugin 'JuliaEditorSupport/julia-vim'
 let g:ycm_server_python_interpreter='/usr/bin/python2'
 " vim-lua-ftplugin -- provides Vim autocompletions -- can slow one down though
 "Plugin 'xolox/vim-misc'
@@ -196,3 +197,10 @@ let g:NERDTreeDirArrows=0
 
 set noeb vb t_vb=
 
+" Julia
+
+" LaTeX
+Plugin 'vim-latex/vim-latex'
+call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
