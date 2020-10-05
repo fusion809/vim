@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 " Copyright (C) Brenton Horne 2016-2020
 "
 set nocompatible               " be iMproved
